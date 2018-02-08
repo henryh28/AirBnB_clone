@@ -4,7 +4,7 @@ Holberton version of Air BnB
 
 |         *Filenames*         |                      *Description*                                         |
 |-----------------------------|----------------------------------------------------------------------------|
-| In progress                 |                                                                            |
+| In progress                 | Test                                                                       |
 
 
 ## Authors
