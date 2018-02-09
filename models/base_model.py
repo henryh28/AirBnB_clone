@@ -11,13 +11,18 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """ Constructor method """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
 
         if kwargs:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if key is '__class__':
+                    value = self.__class__
+                else:
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+
 
     def __str__(self):
         """ Returns string representation of current object """
