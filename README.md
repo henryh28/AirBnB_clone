@@ -2,9 +2,11 @@
 
 Holberton version of Air BnB
 
-|         *Filenames*         |                      *Description*                                         |
-|-----------------------------|----------------------------------------------------------------------------|
-| In progress                 | Test                                                                       |
+|           *Filenames*           |                      *Description*                                         |
+|---------------------------------|----------------------------------------------------------------------------|
+| /models/base_model.py           | Implements a base model class from which to extend other classes           |
+| /models/engine/file_storage.py  | Implements a class to serialize and deserialize objects to/from a file     |
+
 
 
 ## Authors
