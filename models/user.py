@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Define the user class
+Define the User class
 """
 
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """ Extends the BaseModel parent class """
+    """ Extends the 'BaseModel' parent class to create a 'User' class """
 
     email = ""
     password = ""
