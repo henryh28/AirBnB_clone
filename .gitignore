@@ -1,3 +1,5 @@
 ## Test File ##
 
 /resource
+__pycache__
+/models/_pycache__
