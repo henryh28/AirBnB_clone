@@ -4,8 +4,9 @@
 import cmd
 import models
 from models.base_model import BaseModel
+from models.user import User
 
-classes = {"BaseModel": BaseModel}
+classes = {"BaseModel": BaseModel, "User": User}
 forbidden = {"id", "created_at", "updated_at"}
 
 

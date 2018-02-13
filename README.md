@@ -5,6 +5,7 @@ Holberton version of Air BnB
 |           *Filenames*           |                      *Description*                                         |
 |---------------------------------|----------------------------------------------------------------------------|
 | /models/base_model.py           | Implements a base model class from which to extend other classes           |
+| /models/user.py                 | Implements a User class                                                    |
 | /models/engine/file_storage.py  | Implements a class to serialize and deserialize objects to/from a file     |
 | console.py                      | Entry point for command line interpreter                                   |
 

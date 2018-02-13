@@ -4,6 +4,7 @@ Serialize/deserialize objects to/from JSON files
 """
 import json
 from models.base_model import BaseModel
+from models.user import User
 from collections import namedtuple
 
 
@@ -42,5 +43,8 @@ class FileStorage():
                 if "__class__" in value and revived[key][
                         "__class__"] == "BaseModel":
                     FileStorage.__objects[key] = BaseModel(**value)
+                elif "__class__" in value and revived[key][
+                        "__class__"] == "User":
+                    FileStorage.__objects[key] = User(**value)
         except:
             pass
