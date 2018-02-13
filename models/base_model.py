@@ -39,7 +39,8 @@ class BaseModel:
     def to_dict(self):
         """ Returns a dictionary of the current instance """
         dict_ = self.__dict__
-        dict_["__class__"] = self.__class__.__name__
+# Enable below to allow for __class__ key to be in object
+#        dict_["__class__"] = self.__class__.__name__
 
         if "created_at" in dict_:
             if type(dict_["created_at"]) is str:
