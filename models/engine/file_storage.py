@@ -5,6 +5,11 @@ Serialize/deserialize objects to/from JSON files
 import json
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from collections import namedtuple
 
 
@@ -46,5 +51,20 @@ class FileStorage():
                 elif "__class__" in value and revived[key][
                         "__class__"] == "User":
                     FileStorage.__objects[key] = User(**value)
+                elif "__class__" in value and revived[key][
+                        "__class__"] == "State":
+                    FileStorage.__objects[key] = State(**value)
+                elif "__class__" in value and revived[key][
+                        "__class__"] == "City":
+                    FileStorage.__objects[key] = City(**value)
+                elif "__class__" in value and revived[key][
+                        "__class__"] == "Amenity":
+                    FileStorage.__objects[key] = Amenity(**value)
+                elif "__class__" in value and revived[key][
+                        "__class__"] == "Place":
+                    FileStorage.__objects[key] = Place(**value)
+                elif "__class__" in value and revived[key][
+                        "__class__"] == "Review":
+                    FileStorage.__objects[key] = Review(**value)
         except:
             pass

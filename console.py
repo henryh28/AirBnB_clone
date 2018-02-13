@@ -5,8 +5,14 @@ import cmd
 import models
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
-classes = {"BaseModel": BaseModel, "User": User}
+classes = {"BaseModel": BaseModel, "User": User, "State": State,
+           "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
 forbidden = {"id", "created_at", "updated_at"}
 
 
@@ -19,6 +25,7 @@ class HBNBCommand(cmd.Cmd):
 
     do_EOF = do_quit
     do_eof = do_quit
+    do_exit = do_quit
 
     def emptyline(self):
         """ Do nothing if no input is entered """
