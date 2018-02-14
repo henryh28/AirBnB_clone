@@ -155,6 +155,10 @@ class HBNBCommand(cmd.Cmd):
                         if value.__class__.__name__ == args_list[0]:
                             count += 1
                     print(count)
+                elif args_list[1].split("(")[0] == "show":
+                    show_id = args_list[1].split('"')[1]
+                    new_arg = args_list[0] + " " + show_id
+                    self.do_show(new_arg)
                 elif args_list[1].split("(")[0] == "destroy":
                     death_id = args_list[1].split('"')[1]
                     new_arg = args_list[0] + " " + death_id
