@@ -99,7 +99,6 @@ class HBNBCommand(cmd.Cmd):
         if (len(args_list) > 0) and args_list[0] not in classes:
             print("** class doesn't exist **")
             return
-
         if len(args_list) == 0:
             for value in models.storage.all().values():
                 output += ", " if comma_flag == 1 else ""
@@ -156,6 +155,10 @@ class HBNBCommand(cmd.Cmd):
                         if value.__class__.__name__ == args_list[0]:
                             count += 1
                     print(count)
+                elif args_list[1].split("(")[0] == "destroy":
+                    death_id = args_list[1].split('"')[1]
+                    new_arg = args_list[0] + " " + death_id
+                    self.do_destroy(new_arg)
                 else:
                     print("Invalid command")
             else:
