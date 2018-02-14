@@ -140,5 +140,27 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("[Skynet]: Human please don't change that attribute")
 
+    def default(self, args):
+        """
+        Process methods for valid classes
+        """
+        args_list = args.split(".")
+        count = 0
+
+        if len(args_list) > 1:
+            if args_list[0] in classes:
+                if args_list[1] == "all()":
+                    self.do_all(args_list[0])
+                elif args_list[1] == "count()":
+                    for value in models.storage.all().values():
+                        if value.__class__.__name__ == args_list[0]:
+                            count += 1
+                    print(count)
+                else:
+                    print("Invalid command")
+            else:
+                print("Class '{}' does not exist".format(args_list[0]))
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
