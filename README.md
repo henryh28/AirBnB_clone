@@ -1,6 +1,16 @@
 ## AirBnB Clone
 
-Holberton version of Air BnB
+## Description
+Initial framework for an AirBnB clone project.  Currently consists backend 
+modeling of classes, and a command line interface used to view and 
+manipulate objects in the database.
+
+## Installation
+Clone this repository into a local folder
+
+## Usage
+from the main program folder, type "./console" to start the command line interface.   Type "help" or "?" to get a list of the available commands.
+
 
 |           *Filenames*           |                      *Description*                                         |
 |---------------------------------|----------------------------------------------------------------------------|
