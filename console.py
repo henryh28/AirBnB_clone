@@ -156,13 +156,20 @@ class HBNBCommand(cmd.Cmd):
                             count += 1
                     print(count)
                 elif args_list[1].split("(")[0] == "show":
-                    show_id = args_list[1].split('"')[1]
-                    new_arg = args_list[0] + " " + show_id
+                    new_arg = str(args).replace('.show("', ' ')
+                    new_arg = new_arg.strip(')"')
                     self.do_show(new_arg)
                 elif args_list[1].split("(")[0] == "destroy":
-                    death_id = args_list[1].split('"')[1]
-                    new_arg = args_list[0] + " " + death_id
+                    new_arg = str(args).replace('.destroy("', ' ')
+                    new_arg = new_arg.strip(')"')
                     self.do_destroy(new_arg)
+                elif args_list[1].split("(")[0] == "update":
+                    new_arg = str(args).strip("{}.".format(args_list[0]))
+                    new_arg = new_arg.replace('update("', ' ')
+                    new_arg = new_arg.replace('", "', ' ')
+                    new_arg = new_arg.strip('")')
+                    new_arg = args_list[0] + new_arg
+                    self.do_update(new_arg)
                 else:
                     print("Invalid command")
             else:
